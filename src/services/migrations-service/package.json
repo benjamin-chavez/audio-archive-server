@@ -1,0 +1,23 @@
+{
+  "name": "migrations-service",
+  "version": "1.0.0",
+  "description": "A service to handle database migrations.",
+  "main": "src/index.ts",
+  "bin": {
+    "migrate:create": "./src/scripts/cliEntry.ts"
+  },
+  "keywords": [
+    "migrations",
+    "database"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "liftoff": "^3.1.0",
+    "ts-node": "^10.9.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.5.9"
+  },
+  "private": true
+}
