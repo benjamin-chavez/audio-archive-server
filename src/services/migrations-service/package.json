@@ -13,6 +13,7 @@
   "author": "Your Name",
   "license": "MIT",
   "dependencies": {
+    "commander": "11.0.x",
     "liftoff": "^3.1.0",
     "ts-node": "^10.9.1"
   },

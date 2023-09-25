@@ -1,3 +1,5 @@
+// src/services/migrations-service/src/scripts/migrationsStub.ts
+
 import { Kysely } from 'kysely'
 
 export async function up(db: Kysely<any>): Promise<void> {

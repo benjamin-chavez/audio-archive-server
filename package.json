@@ -33,10 +33,13 @@
     "test": "(dropdb audio_archive_test || true) && createdb audio_archive_test && jest",
     "test:watch": "(dropdb audio_archive_test || true) && createdb audio_archive_test && jest --watch",
     "prepare": "husky install",
-    "update-kysely-types": "kysely-codegen --out-file ./src/database/db.d.ts"
+    "update-kysely-types": "kysely-codegen --out-file src/@types/db.d.ts",
+    "migration:make": "ts-node ./src/services/migrations-service/src/scripts/cliEntry.ts",
+    "migrate:latest": "npx ts-node src/services/migrations-service/src/scripts/migrator.ts"
   },
   "dependencies": {
     "@prisma/client": "^5.3.1",
+    "commander": "11.0.x",
     "cookie-parser": "~1.4.6",
     "cors": "^2.8.5",
     "debug": "~4.3.4",

@@ -23,11 +23,27 @@ export function createMigration(env) {
     process.exit(1);
   }
 
-  const filename = `${new Date().toISOString().replace(/[:.-]/g, '')}_${migrationName}.ts`;
-  const filePath = path.join(__dirname, '../../../database/migrations', filename);
+  const timestamp = new Date()
+    .toISOString()
+    .replace(/[-T:\.Z]/g, '')
+    .substring(0, 14);
+
+  // const filename = `${new Date()
+  //   .toISOString()
+  //   .replace(/[:.-]/g, '')}_${migrationName}.ts`;
+
+  const filename = `${timestamp}_${migrationName}.ts`;
+
+  const filePath = path.join(
+    __dirname,
+    '../../../../database/migrations',
+    filename
+  );
 
   // Read the stub from the migrationStub.ts file
-  const migrationStubPath = path.join(__dirname, 'migrationStub.ts');
+  // const migrationStubPath = path.join(__dirname, 'migrationStub.ts');
+  const migrationStubPath = path.join(__dirname, 'migrationsStub.ts');
+
   const migrationStub = fs.readFileSync(migrationStubPath, 'utf8');
 
   fs.writeFileSync(filePath, migrationStub);

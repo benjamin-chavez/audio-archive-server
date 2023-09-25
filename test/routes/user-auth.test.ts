@@ -2,7 +2,7 @@
 
 import request, { Response } from 'supertest';
 import app from '../../src/app';
-import knex from '../../src/database/db';
+import knex from '../../src/@types/db';
 
 const TEST_USERS = {
   ADMIN: { username: 'adminUser', password: 'password' },

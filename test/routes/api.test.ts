@@ -2,7 +2,7 @@
 
 import request, { Response } from 'supertest';
 import app from '../../src/app';
-import knex from '../../src/database/db';
+import knex from '../../src/@types/db';
 
 describe('GET /api', () => {
   beforeAll((done) => {

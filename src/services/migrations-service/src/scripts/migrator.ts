@@ -9,7 +9,7 @@ import {
   PostgresDialect,
   FileMigrationProvider,
 } from 'kysely';
-import { DB } from '../database/db';
+import { DB } from '../../../../@types/db';
 
 async function migrateToLatest() {
   const db = new Kysely<DB>({
@@ -29,7 +29,7 @@ async function migrateToLatest() {
       path,
       // This needs to be an absolute path.
       // migrationFolder: path.join(__dirname, '/src/database/migrations'),
-      migrationFolder: path.join(__dirname, '../database/migrations'),
+      migrationFolder: path.join(__dirname, '../../../../database/migrations'),
     }),
   });
 

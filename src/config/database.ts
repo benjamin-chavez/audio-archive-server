@@ -1,23 +1,9 @@
-// // src/database/db.ts
+// src/database.ts
 
-// import 'dotenv/config';
-// import knexConstructor from 'knex';
-// import knexConfig from '../../knexfile';
-
-// const environment = process.env.NODE_ENV || 'development';
-// const config = knexConfig[environment];
-
-// const knex = knexConstructor(config);
-
-// export default knex;
-
-// src/db.ts
-
-// import { Database } from '../types.js'; // this is the Database interface we defined earlier
+// import { Database } from '../../.trash/types.js'; // this is the Database interface we defined earlier
 import { Pool } from 'pg';
 import { CamelCasePlugin, Kysely, PostgresDialect } from 'kysely';
-// import { DB } from 'kysely-codegen';
-import { DB } from '../src/database/db';
+import { DB } from '../@types/db';
 
 const dialect = new PostgresDialect({
   pool: new Pool({

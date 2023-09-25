@@ -1,4 +1,0 @@
-{
-  "databaseUrl": "${DATABASE_URL}",
-  "migrationFolder": "src/database/migrations"
-}
